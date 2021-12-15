@@ -5,7 +5,8 @@
 #include <LiquidCrystal_I2C.h>
 
 
-
+#include <Variables.h>
+#include <function.h>
 #include <Setup.h>
 #include <Calibracion.h>
 #include <LeerDeltaV.h>

@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#include <Variables.h>
+
 #include <PrintNumber.h>
 
 #include <Conectar_WiFi.h>

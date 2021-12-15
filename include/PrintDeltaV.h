@@ -14,6 +14,7 @@ void PrintDeltaV(){
       if(bandHold == false){
           deltaV = LeerDeltaV(1);
           x = Calibrar(deltaV,escala);
+          EnviarDatos(x);
           PrintDeltaVLCD(x,escala);
       }
 
