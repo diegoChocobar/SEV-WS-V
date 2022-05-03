@@ -36,6 +36,8 @@ void Conectar_WiFi(){
     lcd.print("IP: ");
     lcd.print(IP);
 
+    delay(2500);
+
 
     initWebSocket();
 

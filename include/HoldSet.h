@@ -21,6 +21,7 @@ void HoldSet(void){
         /////////////////////////////////////////////////////// 
         /////enviamos datos al software///////////////////////
         EnviarDatos(deltaV);
+        //EnviarHold(1);
         /////////////////////////////////////////////////////
         
         while(digitalRead(pulsador_hold) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
