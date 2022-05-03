@@ -17,3 +17,7 @@ Version 0.5 --> 03-05-2022
      * Mejoramiento en la respuesta Check Funcionamiento.
      * Al entrar en modo Hold enviamos el dato de la tension.
 
+Version 0.6 --> 03-05-2022
+    En esta version trabajamos en:
+     * Mejora en el vision de numeros en display.
+     * Calibración desactivada.

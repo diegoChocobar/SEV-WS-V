@@ -14,7 +14,6 @@ void PrintDeltaV(){
       if(bandHold == false){
           deltaV = LeerDeltaV(1);
           x = Calibrar(deltaV,escala);
-          //EnviarDatos(x);
           PrintDeltaVLCD(x,escala);
       }
 
@@ -43,12 +42,15 @@ void PrintDeltaVLCD(float x, int y){//x:tension y:escala
   if(y == 2){//tension maxima a medir son +/- 2.048V con resolucion de 0.0625mV
     if(x<=2000){
       //debemos mostrar 4 numero con un punto decimal
+      float xx = 0.0; //numero a redondear
       x = x*10.0;
-      diezmil = x/10000;
-      mil = (x - diezmil*10000) / 1000;
-      centena =(x - diezmil*10000 - mil*1000) / 100;
-      decena = (x - diezmil*10000 - mil*1000 - centena*100) / 10;
-      unidad = (x - diezmil*10000 - mil*1000 - centena*100 - decena*10);
+      xx = round(x);
+
+      diezmil = xx/10000;
+      mil = (xx - diezmil*10000) / 1000;
+      centena =(xx - diezmil*10000 - mil*1000) / 100;
+      decena = (xx - diezmil*10000 - mil*1000 - centena*100) / 10;
+      unidad = (xx - diezmil*10000 - mil*1000 - centena*100 - decena*10);
 
 
       lcd.home();lcd.clear();
@@ -58,9 +60,9 @@ void PrintDeltaVLCD(float x, int y){//x:tension y:escala
       lcd.print("***Escala: 2000mV***");
       mostranumero(pos1_unidad,unidad);
       mostranumero(pos1_decena,decena);
-      mostranumero(pos1_centena,centena);
-      mostranumero(pos1_mil,mil);
-      mostranumero(pos1_diezmil,diezmil);
+      if(diezmil==0 && mil==0 && centena==0){}else{mostranumero(pos1_centena,centena);}
+      if(diezmil==0 && mil==0){}else{mostranumero(pos1_mil,mil);} 
+      if(diezmil != 0){mostranumero(pos1_diezmil,diezmil);} 
       lcd.setCursor(15,2);
       lcd.print("*");
 
@@ -102,8 +104,8 @@ void PrintDeltaVLCD(float x, int y){//x:tension y:escala
       mostranumero(pos2_unidad,unidad);
       mostranumero(pos2_decena,decena);
       mostranumero(pos2_centena,centena);
-      mostranumero(pos2_mil,mil);
-      mostranumero(pos2_diezmil,diezmil);
+      if(diezmil==0 && mil==0){}else{mostranumero(pos2_mil,mil);}
+      if(diezmil != 0){mostranumero(pos2_diezmil,diezmil);}
       lcd.setCursor(11,2);
       lcd.print("*");
     }
@@ -143,8 +145,8 @@ void PrintDeltaVLCD(float x, int y){//x:tension y:escala
       mostranumero(pos2_unidad,unidad);
       mostranumero(pos2_decena,decena);
       mostranumero(pos2_centena,centena);
-      mostranumero(pos2_mil,mil);
-      mostranumero(pos2_diezmil,diezmil);
+      if(diezmil==0 && mil==0){}else{mostranumero(pos2_mil,mil);}
+      if(diezmil != 0){mostranumero(pos2_diezmil,diezmil);}
       lcd.setCursor(11,2);
       lcd.print("*");
 
