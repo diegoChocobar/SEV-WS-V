@@ -12,7 +12,7 @@ void EnviarDatos(float x){
     tension = x;
 
     String string_v = String(tension,2);
-    String str_final = "SEV_V/Tension/" + string_v;
+    String str_final = "SEV_V/SEV_C/Tension/" + string_v;
     
     ws.textAll(str_final);
 
@@ -22,7 +22,7 @@ void EnviarHold(int hold){
 
     String string_h = String(hold);
 
-    String str_final = "SEV_V/SEV_WEB/Hold/" + string_h;
+    String str_final = "SEV_V/SEV_C/Hold/" + string_h;
     ws.textAll(str_final);
 
 }
