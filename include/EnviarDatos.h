@@ -18,11 +18,11 @@ void EnviarDatos(float x){
 
 }
 
-void EnviarHold(int hold){
+void EnviarHold(String hold){
 
-    String string_h = String(hold);
+    //String string_h = String(hold);
 
-    String str_final = "SEV_V/SEV_C/Hold/" + string_h;
+    String str_final = "SEV_V/SEV_I/Hold/" + hold;
     ws.textAll(str_final);
 
 }

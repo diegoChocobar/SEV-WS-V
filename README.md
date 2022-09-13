@@ -26,3 +26,7 @@ Version 0.6 --> 03-05-2022
 Version 0.61 --> 04-05-2022
     En esta version trabajamos en:
      * Cambio en string Envio de datos.
+
+Version 0.7 --> 13-09-2022
+    En esta version trabajamos en:
+     * Envio de Hold por websockets

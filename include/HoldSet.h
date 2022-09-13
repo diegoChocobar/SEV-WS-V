@@ -12,16 +12,17 @@ void HoldSet(void){
     if(digitalRead(pulsador_hold) == 0){
       if (bandHold == false) {//debemos congelar la señal actual
         bandHold = true;
+        EnviarHold("ON");
+        delay(500);//este delay es para sincronizar el tiempo que tarda en recibir la orden hold la placa SEV_I
         digitalWrite(output_led, HIGH);
         digitalWrite(output_zumbador, HIGH);
 
         lcd.setCursor(0, 3);
         lcd.print("*HOLD ON --> MEDIDA*");
-
         /////////////////////////////////////////////////////// 
         /////enviamos datos al software///////////////////////
+        
         EnviarDatos(deltaV);
-        //EnviarHold(1);
         /////////////////////////////////////////////////////
         
         while(digitalRead(pulsador_hold) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
@@ -33,14 +34,17 @@ void HoldSet(void){
       }else{//debemos seguir midiendo
 
         bandHold = false;
+        EnviarHold("OFF");
+        delay(500);//este delay es para sincronizar el tiempo que tarda en recibir la orden hold la placa SEV_I
         digitalWrite(output_led, LOW);
         digitalWrite(output_zumbador, HIGH);
 
         lcd.setCursor(0, 3);
         lcd.print("*HOLD OFF -> MEDIDA*");
+        
 
         while(digitalRead(pulsador_hold) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
-        //digitalWrite(output_hold, LOW);
+        
         delay(100);
         digitalWrite(output_zumbador, LOW);
         /////////////////////////////////////////////////////
