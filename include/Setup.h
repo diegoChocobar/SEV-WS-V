@@ -15,8 +15,8 @@ void setup(void)
   pinMode(input_zero, INPUT_PULLUP);//Configuramos el pin como entrada pullup
   digitalWrite(input_zero, HIGH);
 
-  pinMode(pulsador_select, INPUT_PULLUP);//Configuramos el pin como entrada pullup
-  digitalWrite(pulsador_select, HIGH);
+  pinMode(pulsador_disparo, INPUT_PULLUP);//Configuramos el pin como entrada pullup
+  digitalWrite(pulsador_disparo, HIGH);
 
   pinMode(pulsador_hold, INPUT_PULLUP);//Configuramos el pin como entrada pullup
   digitalWrite(pulsador_hold, HIGH);
@@ -24,12 +24,12 @@ void setup(void)
   pinMode(output_led, OUTPUT);
   digitalWrite(output_led, LOW);
 
-   pinMode(output_zumbador, OUTPUT);
+  pinMode(output_zumbador, OUTPUT);
   digitalWrite(output_zumbador, LOW);
+
+  pinMode(output_disparo, OUTPUT);
+  digitalWrite(output_disparo, HIGH);
   delay(10);
-  
-  //pinMode(output_pwm, OUTPUT);
-  //analogWrite(output_pwm, 0);//valores de 0 a 1023
 
   //Serial.begin(9600);
 
@@ -83,7 +83,7 @@ void SaludoInicial(){
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("*SEV-WS-V -> GIT-0.7");
+    lcd.print("*SEV-WS-V -> GIT-0.9");
     lcd.setCursor(0, 2);
     lcd.print("cel:+54-0387-5312963");
     lcd.setCursor(0, 3);

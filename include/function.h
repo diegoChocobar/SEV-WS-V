@@ -51,19 +51,22 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
     str_receptor = str_data.substring(6,'/');
     str_tipo = str_data.substring(12,'/');
 
-    //ws.textAll(str_data);
-
     if(str_receptor.compareTo("SEV_V")>0){
-      if(str_tipo.compareTo("Check")>0){
-        ws.textAll("SEV_V/SEV_C/Check/Ok");
+      if (strcmp((char*)data, "SEV_C/SEV_V/Check/?") == 0) {
+        ws.textAll("SEV_V/SEV_C/Check/Ok");;
+      }
+      if (strcmp((char*)data, "SEV_I/SEV_V/Hold/ON") == 0) {
+        señalhold = true;
+        ws.textAll("SEV_V/SEV_C/Hold/ON");
+      }
+      if (strcmp((char*)data, "SEV_I/SEV_V/Hold/OFF") == 0) {
+         señalhold = true;
+        ws.textAll("SEV_V/SEV_C/Hold/Off");
       }
     }else{
       ws.textAll(str_data);
     }
-    
-    
-
-    
+  
 
   }
 }

@@ -30,3 +30,12 @@ Version 0.61 --> 04-05-2022
 Version 0.7 --> 13-09-2022
     En esta version trabajamos en:
      * Envio de Hold por websockets
+
+Version 0.8 --> 19-09-2022
+    En esta version trabajamos en:
+     * Implementacion de funcion de disparo
+
+Version 0.9 --> 23-09-2022
+    En esta version trabajamos en:
+      * Reemplazamos la Funcion HoldSet por Hold, ahora recibimos por websocket la orden para entrar en modo Hold
+      * La calibracion esta desactivada

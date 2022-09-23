@@ -26,3 +26,12 @@ void EnviarHold(String hold){
     ws.textAll(str_final);
 
 }
+
+void EnviarDisparo(String hold){
+
+    //String string_h = String(hold);
+
+    String str_final = "SEV_V/SEV_C/Disparo/" + hold;
+    ws.textAll(str_final);
+
+}

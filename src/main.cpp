@@ -8,13 +8,14 @@
 #include <Variables.h>
 #include <function.h>
 #include <Setup.h>
+#include <EnviarDatos.h>
 #include <Calibracion.h>
 #include <LeerDeltaV.h>
 #include <SelectEscala.h>
 #include <ZeroOffSet.h>
-#include <HoldSet.h>
+#include <Hold.h>
 #include <PrintDeltaV.h>
-#include <SelectPotencia.h>
+#include <Disparo.h>
 
 //Esta en una primera version subida a GITHUB --> 23-02-2021
 
@@ -24,7 +25,7 @@ void loop(void)
   tiempo_LCD = millis();
   tiempo_pulsadorZ = millis();
   tiempo_pulsadorE = millis();
-  tiempo_pulsadorS = millis();
+  tiempo_pulsadorD = millis();
   tiempo_pulsadorH = millis();
 
 
@@ -38,9 +39,10 @@ void loop(void)
 
     ZeroOffSet();
 
-    HoldSet();
+    Hold();
 
     //SelectPotencia();
+    //Disparo();
 
     delay(10);
 

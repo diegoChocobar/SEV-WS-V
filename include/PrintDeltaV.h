@@ -32,7 +32,6 @@ void PrintDeltaVLCD(float x, int y){//x:tension y:escala
 
   unsigned long unidad,decena,centena,mil,diezmil;
   boolean negativo = false;
-  //x = abs(x);//abs redondea el numero a entero (no usar en este caso)
 
   if(x < 0){
     x = x * -1;
