@@ -10,7 +10,7 @@ float LeerDeltaV(int canal){
 
 
   ///*
-  Iteraciones = 25;ret=10;
+  Iteraciones = 15;ret=1;
 
   for (int i = 0; i < Iteraciones; i++) {
 
@@ -20,7 +20,7 @@ float LeerDeltaV(int canal){
       diferencia = ads.readADC_Differential_2_3();
     }
     data = diferencia + data;
-    delay(ret);
+    delay(ret);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
 
   }
 
@@ -36,6 +36,6 @@ float LeerDeltaV(int canal){
       El tiempo que demoramos en tomar la lectura es:
       tiempo = (Iteraciones)*(4+ret)  [=] mili segundos
   */////////////////////////////////////////////////////////
-
+  //delay(100);
   return tension;
 }

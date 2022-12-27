@@ -15,9 +15,7 @@
 #include <ZeroOffSet.h>
 #include <Hold.h>
 #include <PrintDeltaV.h>
-#include <Disparo.h>
 
-//Esta en una primera version subida a GITHUB --> 23-02-2021
 
 void loop(void)
 {
@@ -25,7 +23,6 @@ void loop(void)
   tiempo_LCD = millis();
   tiempo_pulsadorZ = millis();
   tiempo_pulsadorE = millis();
-  tiempo_pulsadorD = millis();
   tiempo_pulsadorH = millis();
 
 
@@ -40,9 +37,6 @@ void loop(void)
     ZeroOffSet();
 
     Hold();
-
-    //SelectPotencia();
-    //Disparo();
 
     delay(10);
 

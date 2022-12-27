@@ -39,3 +39,10 @@ Version 0.9 --> 23-09-2022
     En esta version trabajamos en:
       * Reemplazamos la Funcion HoldSet por Hold, ahora recibimos por websocket la orden para entrar en modo Hold
       * La calibracion esta desactivada
+
+Version 1.0 --> 27-12-2022
+    En esta version trabajamos en:
+      * Limpiamos el codigo:
+            - Se elimino todo lo referido a Disparo
+            - Se eliminaron variable no utilizadas
+      * La calibracion esta desactivada

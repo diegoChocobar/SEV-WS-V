@@ -14,6 +14,10 @@ void Conectar_WiFi(){
     IPAddress gateway(192,168,1,255);
     IPAddress subnet(255,255,255,0);
 
+    int channel = 6;
+    boolean hidden = false;
+    int max_connection = 8;
+    
     WiFi.mode(WIFI_AP);
     WiFi.softAPConfig(local_IP, gateway, subnet);
     
@@ -21,7 +25,7 @@ void Conectar_WiFi(){
     lcd.clear();lcd.setCursor(0, 0);
     lcd.print("Creando WiFi...");
 
-   while(!WiFi.softAP(ssid, password))
+   while(!WiFi.softAP(ssid, password, channel, hidden, max_connection))
     {
         lcd.print(".");
         delay(200);
