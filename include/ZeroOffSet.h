@@ -31,7 +31,8 @@ void ZeroOffSet(void){
         lcd.print("***OFF-SET = 0.0 ***");
         //Print en LCD que estamos poniento a cero-cero la medicion
         while(digitalRead(input_zero) == 0){delay(10);} //mientras tenememos presionado el pulsador de zero off set
-        offset_1 = 0;
+        offset_1 ={0,0,0,0,0,0,0};
+        offset_2 ={0,0,0,0,0,0,0};
         delay(50);
         digitalWrite(output_led, LOW);
         digitalWrite(output_zumbador, LOW);

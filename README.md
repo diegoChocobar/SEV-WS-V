@@ -46,3 +46,10 @@ Version 1.0 --> 27-12-2022
             - Se elimino todo lo referido a Disparo
             - Se eliminaron variable no utilizadas
       * La calibracion esta desactivada
+
+Version 2.0 --> 26-01-2023
+    En esta version trabajamos en:
+     * Crear codigo para que la señal sea tratada con array y mejoramos asi el calculo
+     * Todas las funciones fueron adaptadas para que funcionen.
+     * Agregamos un panel de visualizacion para la calibracion
+     * La calibracion se encuentra desactivada

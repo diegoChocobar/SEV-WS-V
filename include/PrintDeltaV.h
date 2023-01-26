@@ -1,20 +1,26 @@
 #include <Arduino.h>
 
 void PrintDeltaVLCD(float x, int y);
+void PrintDeltaVLCD_Calibracion(Tension x, int y);
 
 void PrintDeltaV(){
 
-  //float deltaV = 0;
-  float x;
+  Tension data_tension = {0,0,0,0,0,0,0};
+  //float x;
 
   if(tiempo_actual > tiempo_LCD + 300){
       //pasaron 500ms
       tiempo_LCD = tiempo_actual;
-
+      
       if(bandHold == false){
-          deltaV = LeerDeltaV(1);
-          x = Calibrar(deltaV,escala);
-          PrintDeltaVLCD(x,escala);
+          tiempo_medida_total = millis();
+          data_tension = LeerDeltaV(1);
+          deltaV = data_tension;
+          tiempo_medida_total = millis() - tiempo_medida_total;
+          deltaV.tiempo_total = tiempo_medida_total;
+          //x = Calibrar(deltaV,escala);
+          //PrintDeltaVLCD(deltaV.valor,escala);
+          PrintDeltaVLCD_Calibracion(deltaV,escala);//visualizacion de calibracion
       }
 
   }else{
@@ -26,6 +32,30 @@ void PrintDeltaV(){
 
 }
 
+void PrintDeltaVLCD_Calibracion(Tension x, int y){
+
+  boolean negativo = false;
+  if(x.valor < 0){
+    x.valor = x.valor * -1;
+    negativo = true;
+  }
+
+  lcd.home();lcd.clear();
+  lcd.setCursor(0, 0);
+  if(negativo == true){lcd.print("***TENSION  M-N  (-)");}else{lcd.print("***TENSION  M-N  (+)");}
+  if(y == 2) {lcd.setCursor(0, 3);lcd.print("*2000mV*");}
+  if(y == 4) {lcd.setCursor(0, 3);lcd.print("*1000mV*");}
+  if(y == 16){lcd.setCursor(0, 3);lcd.print("*250mV**");}
+
+  lcd.setCursor(0, 1);lcd.print("V:");lcd.print(x.valor,3);
+  lcd.setCursor(8, 1);lcd.print("d:");lcd.print(x.desvio_standar,3);
+  lcd.setCursor(16, 1);lcd.print("n");lcd.print(x.n,0);
+
+  lcd.setCursor(0, 2);lcd.print("P:");lcd.print(x.promedio,3);
+  lcd.setCursor(16, 2);lcd.print("t");lcd.print(x.tamaño,0);
+
+  lcd.setCursor(8, 3);lcd.print("Time:");lcd.print(x.tiempo_total);
+}
 
 void PrintDeltaVLCD(float x, int y){//x:tension y:escala
 

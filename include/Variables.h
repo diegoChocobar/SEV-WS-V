@@ -7,6 +7,17 @@
 #include <WebSocketsServer.h>
 #include <ESPAsyncWebServer.h>
 
+struct  Tension
+{
+    float promedio;
+    float desvio_standar;
+    float valor;
+    int tamaño;//tamño del numero de iteraciones para la obtencion de una medida
+    int n;//tamaño del valor que queda despues de tratar la señal
+    float tiempo_individual;
+    float tiempo_total;
+};
+
 ////////////////VARIABLES PARA MANEJO DEL LCD //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////
 LiquidCrystal_I2C lcd(0x27,20,4);  // set the LCD address to 0x27 o 0x20 o 0x3F
@@ -39,11 +50,11 @@ boolean bandDisparo=true;
 boolean bandDisparoWEB=false;
 boolean bandDisparoWEBAnt=false;
 
-float offset_1 = 0.0;
-float offset_2 = 0.0;
+Tension offset_1 ={0,0,0,0,0,0,0};
+Tension offset_2={0,0,0,0,0,0,0};
+Tension deltaV;
+int Iteraciones=50;
 
-float deltaV = 0;
-float deltaI = 0;
 
 int pulsador = 16;      //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;    //pin utilizado para pulsador de puesta a cero la medicion
@@ -64,6 +75,8 @@ unsigned long tiempo_pulsadorZ = 0;  //pulsador de puesta a caro la medicion
 unsigned long tiempo_pulsadorE = 0;  //pulsador de selector de escala
 unsigned long tiempo_pulsadorH = 0;  //pulsador para congelar la señal
 
+unsigned long tiempo_medida_total = 0;  //pulsador para congelar la señal
+unsigned long tiempo_medida_indiv = 0;  //pulsador para congelar la señal
 ////////////////INCIALIZAR wifi /////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////    
 const char* ssid = "SEV_WiFi";
