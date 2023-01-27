@@ -34,7 +34,7 @@ void loop(void)
 
     SelectEscala();
 
-    //ZeroOffSet();
+    ZeroOffSet();
 
     Hold();
 
