@@ -18,9 +18,8 @@ void PrintDeltaV(){
           deltaV = data_tension;
           tiempo_medida_total = millis() - tiempo_medida_total;
           deltaV.tiempo_total = tiempo_medida_total;
-          //x = Calibrar(deltaV,escala);
-          //PrintDeltaVLCD(deltaV.valor,escala);
-          PrintDeltaVLCD_Calibracion(deltaV,escala);//visualizacion de calibracion
+          PrintDeltaVLCD(deltaV.valor,escala);
+          //PrintDeltaVLCD_Calibracion(deltaV,escala);//visualizacion de calibracion
       }
 
   }else{

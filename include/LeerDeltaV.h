@@ -29,9 +29,11 @@ Tension LeerDeltaV(int canal){
 
   if(canal == 1){
     result = Calculo_tension(deltaV_señal,Iteraciones);
+    result.valor = Calibrar(result.valor,escala);
     result.valor = result.valor - offset_1.valor;
   }else{
     result = Calculo_tension(deltaV_señal,Iteraciones);
+    //x = Calibrar(deltaV,escala);
     result.valor = result.valor - offset_2.valor;
   }
   //*/

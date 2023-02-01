@@ -53,3 +53,8 @@ Version 2.0 --> 26-01-2023
      * Todas las funciones fueron adaptadas para que funcionen.
      * Agregamos un panel de visualizacion para la calibracion
      * La calibracion se encuentra desactivada
+    
+Version 2.1 --> 23-01-2023
+    Esta es la version que contiene el equipo de Aguas de Catamarca:
+        * Se agrego Resistencia de Shunt y circuito de proteccion contra sobre corriente
+        * Se agrego la calibracion de equipo.
