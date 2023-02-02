@@ -90,6 +90,12 @@ Tension Calculo_tension(float x[], int length){
     result.valor = float(valor/n);
 ///////////////////////////////////////////////////////////////////
 
+/////////////// Verificacion valores negativos ////////////////////
+    if(result.promedio<0){
+      result.valor = result.valor * (-1);
+    }
+
+///////////////////////////////////////////////////////////////////
 
     return result;
 }
