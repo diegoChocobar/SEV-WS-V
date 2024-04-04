@@ -56,6 +56,10 @@ Tension Calculo_tension(float x[], int length){
 
   int n=0;
   float valor=0;
+  int h = 1; ///variable de alejamiento del desvio standar
+  float Li=0;///limite inferior de h desvio standar
+  float Ls=0;///limite superior de h desvio standar
+  float Rango=0;
 
 //////////////Calculo de valor promerio //////////////////////////////
     for (int i = 0; i < length; i++) {
@@ -73,12 +77,18 @@ Tension Calculo_tension(float x[], int length){
     result.desvio_standar = sqrt(sumatoria/length);
 /////////////////////////////////////////////////////////////////////////
 
+//////////////calculos adicionales///////////////////////////////
+    Li = result.promedio - h * result.desvio_standar; //limite inferior de h desvio standar
+    Ls = result.promedio + h * result.desvio_standar; // limite superior de h desvio standar
+/////////////////////////////////////////////////////////////////
+
 //////////////Calculo del valor final ///////////////////////////////////
     for (int i = 0; i < length; i++) {
-      
-      tension[i] = sqrt(tension[i]*tension[i]);
-      if(tension[i] <= sqrt(result.promedio*result.promedio)+2*(result.desvio_standar))
-      {
+
+      if(tension[i]<Li || tension[i]>Ls){
+        //estamos fuera del rango para tomar como buena una medicion
+      }
+      else{
         n = n+1;
         valor = valor + tension[i];
       }
@@ -86,13 +96,6 @@ Tension Calculo_tension(float x[], int length){
     }
     result.n = n;
     result.valor = float(valor/n);
-///////////////////////////////////////////////////////////////////
-
-/////////////// Verificacion valores negativos ////////////////////
-    if(result.promedio<0){
-      result.valor = result.valor * (-1);
-    }
-
 ///////////////////////////////////////////////////////////////////
 
     return result;

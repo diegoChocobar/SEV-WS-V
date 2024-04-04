@@ -53,3 +53,7 @@ Version 2.0 --> 26-01-2023
      * Todas las funciones fueron adaptadas para que funcionen.
      * Agregamos un panel de visualizacion para la calibracion
      * La calibracion se encuentra desactivada
+
+Version 2.1 --> 04-04-2024
+    En esta version trabajamos en:
+        * Correjimos el calculo del valor final de señal teniendo en cuenta los calculos de desvio standar.
