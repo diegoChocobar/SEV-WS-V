@@ -57,3 +57,4 @@ Version 2.0 --> 26-01-2023
 Version 2.1 --> 04-04-2024
     En esta version trabajamos en:
         * Correjimos el calculo del valor final de señal teniendo en cuenta los calculos de desvio standar.
+        * Aumentamos las medidas tomadas en el desvio standar

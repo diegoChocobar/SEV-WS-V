@@ -56,7 +56,7 @@ Tension Calculo_tension(float x[], int length){
 
   int n=0;
   float valor=0;
-  int h = 1; ///variable de alejamiento del desvio standar
+  float h = 1.5; ///variable de alejamiento del desvio standar, 1.5 representa el 86,6 de las medidas
   float Li=0;///limite inferior de h desvio standar
   float Ls=0;///limite superior de h desvio standar
   float Rango=0;
