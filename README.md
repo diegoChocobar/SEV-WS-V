@@ -58,3 +58,7 @@ Version 2.1 --> 04-04-2024
     En esta version trabajamos en:
         * Correjimos el calculo del valor final de señal teniendo en cuenta los calculos de desvio standar.
         * Aumentamos las medidas tomadas en el desvio standar
+
+Version 2.1 --> Sergio Iramain
+    En esta version trabajamos en:
+        * Display de Tensión en modo lectura.
