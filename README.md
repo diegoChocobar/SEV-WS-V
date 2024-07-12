@@ -58,3 +58,7 @@ Version 2.1 --> 04-04-2024
     En esta version trabajamos en:
         * Correjimos el calculo del valor final de señal teniendo en cuenta los calculos de desvio standar.
         * Aumentamos las medidas tomadas en el desvio standar
+
+Version 2.11 --> 04-04-2024
+    En esta version trabajamos en:
+        * Agregamos delay para mejorar la comunicacion websocket

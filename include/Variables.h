@@ -53,7 +53,7 @@ boolean bandDisparoWEBAnt=false;
 Tension offset_1 ={0,0,0,0,0,0,0};
 Tension offset_2={0,0,0,0,0,0,0};
 Tension deltaV;
-int Iteraciones=50;
+int Iteraciones=40;
 
 
 int pulsador = 16;      //pin utilizado para el pulsador de cambio de escala

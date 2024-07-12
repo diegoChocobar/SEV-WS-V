@@ -28,10 +28,14 @@ Tension LeerDeltaV(int canal){
   }
 
   if(canal == 1){
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result = Calculo_tension(deltaV_señal,Iteraciones);
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.valor = result.valor - offset_1.valor;
   }else{
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result = Calculo_tension(deltaV_señal,Iteraciones);
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.valor = result.valor - offset_2.valor;
   }
   //*/
@@ -66,6 +70,7 @@ Tension Calculo_tension(float x[], int length){
       tension[i] = float( (x[i] ) * constanteADS );
       result.promedio = result.promedio + tension[i];
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.promedio = result.promedio / length;
     result.tamaño = length;
 /////////////////////////////////////////////////////////////////////////
@@ -74,6 +79,7 @@ Tension Calculo_tension(float x[], int length){
     for (int i = 0; i < length; i++) {
         sumatoria = sumatoria + (tension[i]-result.promedio)*(tension[i]-result.promedio);
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.desvio_standar = sqrt(sumatoria/length);
 /////////////////////////////////////////////////////////////////////////
 
@@ -94,6 +100,7 @@ Tension Calculo_tension(float x[], int length){
       }
       
     }
+    delay(1);//este "delay" es fundamental para que la conexión WEBSOCKET no de caiga. no es lo mismo delayMicroseconds
     result.n = n;
     result.valor = float(valor/n);
 ///////////////////////////////////////////////////////////////////
