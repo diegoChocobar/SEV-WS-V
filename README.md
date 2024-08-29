@@ -62,3 +62,7 @@ Version 2.1 --> 04-04-2024
 Version 2.11 --> 04-04-2024
     En esta version trabajamos en:
         * Agregamos delay para mejorar la comunicacion websocket
+
+Version 2.12 Stable --> 29-08-2024
+    En esta version trabajamos en:
+        * Cambiamos los pines de I/O para correcto funcionamiento.
