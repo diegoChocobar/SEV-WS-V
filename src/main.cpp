@@ -36,7 +36,7 @@ void loop(void)
 
     ZeroOffSet();
 
-    Hold();
+    Hold_Button();
 
     delay(10);
 

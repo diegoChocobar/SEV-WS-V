@@ -49,6 +49,7 @@ boolean señalhold = false;
 boolean bandDisparo=true;
 boolean bandDisparoWEB=false;
 boolean bandDisparoWEBAnt=false;
+boolean bandHoldWEB=false;
 
 Tension offset_1 ={0,0,0,0,0,0,0};
 Tension offset_2={0,0,0,0,0,0,0};
@@ -59,7 +60,7 @@ int Iteraciones=40;
 int pulsador = 16;      //pin utilizado para el pulsador de cambio de escala
 int input_zero = 14;    //pin utilizado para pulsador de puesta a cero la medicion
 int pulsador_disparo = 180;  //pin utilizado para pulsador selector de potencia de salida
-int pulsador_hold = 181;    //pin utilizado para pulsador dedicado a congenlar la señal medida
+int pulsador_hold = 13;    //pin utilizado para pulsador dedicado a congenlar la señal medida
 
 int output_led = 2;     //pin de salida led indicador
 int output_zumbador = 3; //pin de salida zumbador

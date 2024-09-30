@@ -78,9 +78,26 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
     if (str_receptor == "SEV_V") {
       
       if(str_emisor == "SEV_C"){//nos envio el dato la computadora
+        
         if (str_tipo == "Check") {
           ws.textAll("SEV_V/SEV_C/Check/Ok");
         }
+        if (str_tipo == "Hold") {
+          
+          if (str_value == "ON") {
+              bandHoldWEB = true;
+              bandHold = false;
+              ws.textAll("SEV_V/SEV_C/Hold/ON");
+          }
+          if (str_value == "OFF") {
+              bandHoldWEB = true;
+              bandHold = true;
+              ws.textAll("SEV_V/SEV_C/Hold/OFF");
+          }
+          
+        }
+        
+
       }
 
       if(str_emisor == "SEV_I"){//nos envio el dato la placa de corriente
@@ -100,7 +117,7 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
 
     }
     else{
-        ws.textAll(str_data);
+        //ws.textAll(str_data);
     }
     
   }
