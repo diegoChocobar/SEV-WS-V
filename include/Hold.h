@@ -51,10 +51,10 @@ void Hold_Button(void){
     
 
     if(digitalRead(pulsador_hold) == 0 || bandHoldWEB == true){
-      bandHoldWEB = false;
+      
       if (bandHold == false) {//debemos congelar la señal actual
         bandHold = true;
-        EnviarHold("ON");
+        if (bandHoldWEB == false) { EnviarHold("ON"); } //cuando la señal de hold no proviene de la web debemos enviar señal de hold a placa de corriente
         delay(100);//este delay es de antirrebote del pulsados
         digitalWrite(output_led, HIGH);
         digitalWrite(output_zumbador, HIGH);
@@ -75,7 +75,7 @@ void Hold_Button(void){
       }else{//debemos seguir midiendo
 
         bandHold = false;
-        EnviarHold("OFF");
+        if (bandHoldWEB == false) { EnviarHold("OFF"); } //cuando la señal de hold no proviene de la web debemos enviar señal de hold a placa de corriente
         delay(100);//este delay es el antirrebote del pulsador
         digitalWrite(output_led, LOW);
         digitalWrite(output_zumbador, HIGH);
@@ -91,6 +91,8 @@ void Hold_Button(void){
         /////////////////////////////////////////////////////
 
       }
+      
+      bandHoldWEB = false;
     }
 
   }else{

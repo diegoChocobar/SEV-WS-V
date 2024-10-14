@@ -117,7 +117,7 @@ void handleWebSocketMessage(void *arg, uint8_t *data, size_t len) {
 
     }
     else{
-        //ws.textAll(str_data);
+        ws.textAll(str_data);
     }
     
   }

@@ -69,6 +69,7 @@ int output_pwm = 183;   //pin de salida pwm
 unsigned int ValorPwm=20;
 boolean band_potencia = false;
 
+unsigned int nSerie = 9001;
 
 unsigned long tiempo_actual = 0;
 unsigned long tiempo_LCD = 0;
