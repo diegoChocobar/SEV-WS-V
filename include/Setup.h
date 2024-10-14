@@ -81,7 +81,7 @@ void SaludoInicial(){
     lcd.setCursor(0, 0);
     lcd.print("***CDC Elctronics***");
     lcd.setCursor(0, 1);
-    lcd.print("*SEV-WS-V -> GIT-2.13");
+    lcd.print("SEV-WS-V -> GIT 2.13");
     lcd.setCursor(0, 2);
     lcd.print("***N Serie: ");
     lcd.print(nSerie);
